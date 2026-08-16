@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "./components/Header";
 import SearchBar from "./components/SearchBar";
 import "./App.css";
@@ -10,14 +11,19 @@ import Essentials from "./components/Essentials";
 import Footer from "./components/Footer";
 
 function App() {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
   return (
     <>
       <div className="fixed top-0 left-0 right-0 z-50 bg-[#ffffff]">
         <div className="bg-[#f5f5f5]">
           <Header />
         </div>
-        <SearchBar />
-        <Navbar />
+        <SearchBar
+          isMobileNavOpen={isMobileNavOpen}
+          onToggleMobileNav={() => setIsMobileNavOpen((prev) => !prev)}
+        />
+        <Navbar isMobileOpen={isMobileNavOpen} />
       </div>
       <Wellcomepage />
       <SmartPhones />

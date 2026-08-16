@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ArrowIcon from "./icons/ArrowIcon";
 
-function Navbar() {
+function Navbar({ isMobileOpen = false }) {
   const [openCategory, setOpenCategory] = useState(null);
   const navCatigories = [
     { name: "Groceries", items: ["Fruits & Vegetables", "Dairy", "Bakery"] },
@@ -21,7 +21,9 @@ function Navbar() {
   ];
 
   return (
-    <div className="border-b border-[#EDEDED]">
+    <div
+      className={`${isMobileOpen ? "block" : "hidden"} border-b border-[#EDEDED] lg:block`}
+    >
       <div className="container mx-auto px-4">
         <nav className="flex flex-wrap items-center justify-center gap-2 py-4">
           {navCatigories.map((category, index) => (

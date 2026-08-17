@@ -223,8 +223,8 @@ function Ebreands() {
         {slideDots.map((dotIndex) => (
           <button
             key={dotIndex}
-            onClick={() => setActiveIndex(dotIndex * cardsPerView)}
-            className={`h-2.5 rounded-full transition-all ${dotIndex * cardsPerView === activeIndex ? "w-8 bg-sky-500" : "w-2.5 bg-gray-300 hover:bg-gray-400"}`}
+            onClick={() => setActiveIndex(dotIndex)}
+            className={`h-2.5 rounded-full transition-all ${dotIndex === activeIndex ? "w-8 bg-sky-500" : "w-2.5 bg-gray-300 hover:bg-gray-400"}`}
           />
         ))}
       </div>
